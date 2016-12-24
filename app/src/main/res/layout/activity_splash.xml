@@ -8,10 +8,42 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sandrowinkler.example_apps.splashscreen.SplashActivity">
+    tools:context="com.sandrowinkler.example_apps.splashscreen.SplashActivity"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/activity_splash_text"
+        android:layout_centerInParent="true"
+        android:id="@+id/activity_splash_text"
+        android:textSize="15sp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sofa"
+        android:layout_above="@id/activity_splash_text"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/activity_splash_icon"/>
+
+    <ProgressBar
+        style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_splash_progress_bar"
+        android:layout_below="@id/activity_splash_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_splash_icons8"
+        android:textColor="@color/light"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
