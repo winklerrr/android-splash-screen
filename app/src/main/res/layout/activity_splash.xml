@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sandrowinkler.example_apps.splashscreen.SplashActivity"
-    android:background="@color/background">
+    android:background="@color/activity_splash_background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +17,8 @@
         android:text="@string/activity_splash_text"
         android:layout_centerInParent="true"
         android:id="@+id/activity_splash_text"
-        android:textSize="15sp"
+        android:textSize="@dimen/text_size_normal"
+        android:textAlignment="center"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/white" />
@@ -40,9 +41,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_splash_icons8"
-        android:textColor="@color/light"
-        android:textSize="10sp"
+        android:text="@string/icons8"
+        android:textColor="@color/activity_splash_text_light"
+        android:textSize="@dimen/text_size_small"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 
