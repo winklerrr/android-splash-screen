@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#E91E63</color>
-    <color name="white">@android:color/white</color>
-    <color name="light">#F48FB1</color>
+    <color name="activity_splash_background">#E91E63</color>
+    <color name="activity_splash_text">#ffffff</color>
+    <color name="activity_splash_text_light">#F48FB1</color>
+    <color name="activity_main_background">#03A9F4</color>
+    <color name="activity_main_text">#ffffff</color>
+    <color name="activity_main_text_light">#81D4FA</color>
 </resources>

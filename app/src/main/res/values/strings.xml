@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">SplashScreen</string>
+    <string name="icons8">check out www.icons8.com for more fancy icons</string>
     <string name="activity_splash_text">Please take a seat, lean back and let us do the work.</string>
-    <string name="activity_splash_icons8">check out www.icons8.com for more fancy icons</string>
+    <string name="activity_main_text">Cool! We did it!</string>
+    <string name="activity_main_button_again">Do it again!</string>
+    <string name="activity_main_text_steps">Number of steps</string>
+    <string name="activity_main_text_seconds">Seconds between steps</string>
 </resources>
