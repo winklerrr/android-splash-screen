@@ -32,7 +32,7 @@ public class LoadingTask extends AsyncTask<Void, Integer, Void> {
     }
 
     private void load() {
-        for (int currentStep = 0; currentStep < numberOfSteps; currentStep++) {
+        for (int currentStep = 0; currentStep < numberOfSteps && !isCancelled(); currentStep++) {
             final int progressInPercent = 100 * currentStep / numberOfSteps;
             publishProgress(progressInPercent);
 
