@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class MainActivity extends Activity {
@@ -14,6 +15,7 @@ public class MainActivity extends Activity {
     private EditText stepsEditText;
     private EditText secondsEditText;
     private Button splashAgainButton;
+    private ImageView iconImageView;
 
     private int numberOfSteps;
     private double secondsBetweenSteps;
@@ -38,6 +40,7 @@ public class MainActivity extends Activity {
         stepsEditText = (EditText) findViewById(R.id.activity_main_edittext_steps);
         secondsEditText = (EditText) findViewById(R.id.activity_main_edittext_seconds);
         splashAgainButton = (Button) findViewById(R.id.activity_main_button_splash_again);
+        iconImageView = (ImageView) findViewById(R.id.activity_main_icon);
     }
 
     private void initFromIntent() {
@@ -48,7 +51,7 @@ public class MainActivity extends Activity {
 
     private void addListeners() {
         addButtonOnClickListener();
-        addButtonOnLongClickListener();
+        addIconOnClickListener();
     }
 
     private void updateUi() {
@@ -65,12 +68,11 @@ public class MainActivity extends Activity {
         });
     }
 
-    private void addButtonOnLongClickListener() {
-        splashAgainButton.setOnLongClickListener(new View.OnLongClickListener() {
+    private void addIconOnClickListener() {
+        iconImageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public void onClick(View v) {
                 showFurtherOptions();
-                return true;
             }
         });
     }
