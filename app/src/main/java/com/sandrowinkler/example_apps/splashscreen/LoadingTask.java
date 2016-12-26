@@ -37,13 +37,15 @@ public class LoadingTask extends AsyncTask<Void, Integer, Void> {
         for (int currentStep = 0; currentStep < numberOfSteps && !isCancelled(); currentStep++) {
             final int progressInPercent = 100 * currentStep / numberOfSteps;
             publishProgress(progressInPercent);
-
             log(progressInPercent + " %");
+            sleep();
+        }
+    }
 
-            try {
-                Thread.sleep((long)(secondsBetweenSteps * 1000));
-            } catch (InterruptedException ignore) {
-            }
+    private void sleep() {
+        try {
+            Thread.sleep((long)(secondsBetweenSteps * 1000));
+        } catch (InterruptedException ignore) {
         }
     }
 
