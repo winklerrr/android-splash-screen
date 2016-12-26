@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
         iconImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFurtherOptions();
+                toggleFurtherOptions();
             }
         });
     }
@@ -83,8 +83,16 @@ public class MainActivity extends Activity {
         finish();
     }
 
-    private void showFurtherOptions() {
-        layout.setVisibility(View.VISIBLE);
+    private void toggleFurtherOptions() {
+        if (areFurtherOptionsVisible()) {
+            layout.setVisibility(View.INVISIBLE);
+        } else {
+            layout.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private boolean areFurtherOptionsVisible() {
+        return layout.getVisibility() == View.VISIBLE;
     }
 
     private void updateFromUi() {
