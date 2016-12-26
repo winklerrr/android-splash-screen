@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -16,6 +17,9 @@ public class MainActivity extends Activity {
     private EditText secondsEditText;
     private Button splashAgainButton;
     private ImageView iconImageView;
+    private ImageView infoIconImageView;
+
+    private Toast infoToast;
 
     private int numberOfSteps;
     private double secondsBetweenSteps;
@@ -41,6 +45,7 @@ public class MainActivity extends Activity {
         secondsEditText = (EditText) findViewById(R.id.activity_main_edittext_seconds);
         splashAgainButton = (Button) findViewById(R.id.activity_main_button_splash_again);
         iconImageView = (ImageView) findViewById(R.id.activity_main_icon);
+        infoIconImageView = (ImageView) findViewById(R.id.activity_main_info_icon);
     }
 
     private void initFromIntent() {
@@ -52,6 +57,7 @@ public class MainActivity extends Activity {
     private void addListeners() {
         addButtonOnClickListener();
         addIconOnClickListener();
+        addInfoIconOnClickListener();
     }
 
     private void updateUi() {
@@ -77,6 +83,15 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void addInfoIconOnClickListener() {
+        infoIconImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInfoToast();
+            }
+        });
+    }
+
     private void loadSplashAgain() {
         updateFromUi();
         startSplashActivity();
@@ -89,6 +104,15 @@ public class MainActivity extends Activity {
         } else {
             layout.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void showInfoToast() {
+        if (infoToast != null) {
+            infoToast.cancel();
+        }
+
+        infoToast = Toast.makeText(MainActivity.this, R.string.activity_main_toast_info, Toast.LENGTH_SHORT);
+        infoToast.show();
     }
 
     private boolean areFurtherOptionsVisible() {

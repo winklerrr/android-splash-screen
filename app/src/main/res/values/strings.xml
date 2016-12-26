@@ -6,4 +6,5 @@
     <string name="activity_main_button_again">Do it again!</string>
     <string name="activity_main_text_steps">Number of steps</string>
     <string name="activity_main_text_seconds">Seconds between steps</string>
+    <string name="activity_main_toast_info">Try to tap the icons!</string>
 </resources>
