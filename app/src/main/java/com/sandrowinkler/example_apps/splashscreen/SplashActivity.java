@@ -11,11 +11,11 @@ public class SplashActivity extends Activity implements LoadingTaskFinishedListe
     public static final String SECONDS_BETWEEN_STEPS = "seconds";
 
     public static final int DEFAULT_NUMBER_OF_STEPS = 10;
-    public static final int DEFAULT_SECONDS_BETWEEN_STEPS = 1;
+    public static final double DEFAULT_SECONDS_BETWEEN_STEPS = 1;
 
     private ProgressBar progressBar;
     private int numberOfSteps;
-    private int secondsBetweenSteps;
+    private double secondsBetweenSteps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class SplashActivity extends Activity implements LoadingTaskFinishedListe
     }
 
     private void startLoading() {
-        final LoadingTask loadingTask = new LoadingTask(progressBar, this);
-        loadingTask.execute(numberOfSteps, secondsBetweenSteps);
+        final LoadingTask loadingTask = new LoadingTask(progressBar, this, numberOfSteps, secondsBetweenSteps);
+        loadingTask.execute();
     }
 
     private void initWidgets() {
@@ -43,7 +43,7 @@ public class SplashActivity extends Activity implements LoadingTaskFinishedListe
     private void initFromIntent() {
         final Intent intent = getIntent();
         numberOfSteps = intent.getIntExtra(NUMBER_OF_STEPS, DEFAULT_NUMBER_OF_STEPS);
-        secondsBetweenSteps = intent.getIntExtra(SECONDS_BETWEEN_STEPS, DEFAULT_SECONDS_BETWEEN_STEPS);
+        secondsBetweenSteps = intent.getDoubleExtra(SECONDS_BETWEEN_STEPS, DEFAULT_SECONDS_BETWEEN_STEPS);
     }
 
     @Override

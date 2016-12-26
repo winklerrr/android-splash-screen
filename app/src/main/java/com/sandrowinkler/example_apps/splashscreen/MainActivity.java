@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     private Button splashAgainButton;
 
     private int numberOfSteps;
-    private int secondsBetweenSteps;
+    private double secondsBetweenSteps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
     private void initFromIntent() {
         final Intent intent = getIntent();
         numberOfSteps = intent.getIntExtra(SplashActivity.NUMBER_OF_STEPS, SplashActivity.DEFAULT_NUMBER_OF_STEPS);
-        secondsBetweenSteps = intent.getIntExtra(SplashActivity.SECONDS_BETWEEN_STEPS, SplashActivity.DEFAULT_SECONDS_BETWEEN_STEPS);
+        secondsBetweenSteps = intent.getDoubleExtra(SplashActivity.SECONDS_BETWEEN_STEPS, SplashActivity.DEFAULT_SECONDS_BETWEEN_STEPS);
     }
 
     private void addListeners() {
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
 
     private void updateFromUi() {
         numberOfSteps = Integer.parseInt(stepsEditText.getText().toString());
-        secondsBetweenSteps = Integer.parseInt(secondsEditText.getText().toString());
+        secondsBetweenSteps = Double.parseDouble(secondsEditText.getText().toString());
     }
 
     private void startSplashActivity() {
