@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-public class SplashActivity extends Activity implements LoadingTaskFinishedListener {
+public class SplashActivity extends Activity implements LoadingTask.LoadingTaskFinishedListener {
 
     public static final String NUMBER_OF_STEPS = "steps";
     public static final String SECONDS_BETWEEN_STEPS = "seconds";

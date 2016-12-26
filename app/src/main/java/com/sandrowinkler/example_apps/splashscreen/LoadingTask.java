@@ -9,6 +9,10 @@ import android.widget.ProgressBar;
 
 public class LoadingTask extends AsyncTask<Void, Integer, Void> {
 
+    public interface LoadingTaskFinishedListener {
+        void onLoadingFinished();
+    }
+
     private final ProgressBar progressBar;
     private final LoadingTaskFinishedListener listener;
     private final int numberOfSteps;
